@@ -2,6 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="SimpleSketch.App"
              xmlns:local="using:SimpleSketch"
+             xmlns:sukiUi="clr-namespace:SukiUI;assembly=SukiUI"
              RequestedThemeVariant="Light">
   <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
@@ -10,15 +11,14 @@
   </Application.DataTemplates>
 
   <Application.Styles>
-    <FluentTheme />
-    <StyleInclude Source="/Styles/BorderStyles.axaml"/>
+    <sukiUi:SukiTheme ThemeColor="Red"/>
   </Application.Styles>
 
   <Application.Resources>
     <ResourceDictionary>
       <FontFamily x:Key="ShantellSansFont">avares://SimpleSketch/Assets/Fonts#Shantell Sans</FontFamily>
       <ResourceDictionary.MergedDictionaries>
-        <ResourceInclude Source="avares://SimpleSketch/ControlThemes/Button.axaml"/>
+        
       </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>
   </Application.Resources>

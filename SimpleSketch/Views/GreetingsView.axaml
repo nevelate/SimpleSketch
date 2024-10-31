@@ -3,10 +3,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:la="clr-namespace:LucideAvalonia;assembly=LucideAvalonia"
-             xmlns:c="using:SimpleSketch.Controls"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="SimpleSketch.Views.GreetingsView"
-             FontFamily="{StaticResource ShantellSansFont}"
              FontWeight="500">
   <Grid RowDefinitions="28, auto, auto, *, auto" Margin="20, 0, 20, 20">
     <TextBlock Grid.Row="1"
@@ -27,11 +25,7 @@
             Background="#e0e2e8">
       <ScrollViewer>
         <WrapPanel>
-          <c:ProjectCard Margin="0, 0, 8, 8"/>
-          <c:ProjectCard Margin="0, 0, 8, 8"/>
-          <c:ProjectCard Margin="0, 0, 8, 8"/>
-          <c:ProjectCard Margin="0, 0, 8, 8"/>
-          <c:ProjectCard Margin="0, 0, 8, 8"/>
+          
         </WrapPanel>
       </ScrollViewer>
     </Border>
@@ -45,4 +39,4 @@
       </StackPanel>
     </Grid>
   </Grid>
-</UserControl>
+</UserControl>  
