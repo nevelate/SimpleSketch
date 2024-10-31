@@ -18,7 +18,7 @@
 
     <Style Selector="^:not(.noShadow)">
       <Setter Property="Effect">
-        <DropShadowEffect OffsetX="6" OffsetY="6" BlurRadius="6" Opacity="0.5"/>
+        <DropShadowEffect OffsetX="6" OffsetY="6" BlurRadius="0" Opacity="1"/>
       </Setter>
     </Style>
   </Style>
