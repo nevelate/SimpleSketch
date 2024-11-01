@@ -3,16 +3,12 @@
              x:Class="SimpleSketch.App"
              xmlns:local="using:SimpleSketch"
              xmlns:sukiUi="clr-namespace:SukiUI;assembly=SukiUI"
-             RequestedThemeVariant="Light">
+             RequestedThemeVariant="Default">
   <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
   <Application.DataTemplates>
     <local:ViewLocator/>
   </Application.DataTemplates>
-
-  <Application.Styles>
-    <sukiUi:SukiTheme ThemeColor="Red"/>
-  </Application.Styles>
 
   <Application.Resources>
     <ResourceDictionary>
@@ -23,4 +19,8 @@
     </ResourceDictionary>
   </Application.Resources>
 
+  <Application.Styles>
+    <FluentTheme></FluentTheme>
+    <sukiUi:SukiTheme ThemeColor="Red"/>
+  </Application.Styles>
 </Application>
