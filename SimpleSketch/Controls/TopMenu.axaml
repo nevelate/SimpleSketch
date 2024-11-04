@@ -1,23 +1,15 @@
-<suki:SukiWindow xmlns="https://github.com/avaloniaui"
-                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                 xmlns:suki="clr-namespace:SukiUI.Controls;assembly=SukiUI"
-                 xmlns:sukiEx="https://github.com/kikipoulet/SukiUI"
-                 xmlns:la="clr-namespace:LucideAvalonia;assembly=LucideAvalonia"
-                 xmlns:v="using:SimpleSketch.Views"
-                 xmlns:vm="using:SimpleSketch.ViewModels"
-                 xmlns:c="using:SimpleSketch.Controls"
-                 mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-                 x:Class="SimpleSketch.Views.MainWindow"
-                 x:DataType="vm:MainWindowViewModel"
-                 Icon="/Assets/avalonia-logo.ico"
-                 Title="SimpleSketch"
-                 SystemDecorations="None"
-                 CanResize="True"
-                 IsMenuVisible="True">
-    <suki:SukiWindow.MenuItems>
-        <MenuItem Header="File">
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:suki="clr-namespace:SukiUI.Controls;assembly=SukiUI"
+             xmlns:la="clr-namespace:LucideAvalonia;assembly=LucideAvalonia"
+             xmlns:sukiEx="https://github.com/kikipoulet/SukiUI"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="SimpleSketch.Controls.TopMenu">
+    <Grid ColumnDefinitions="Auto, *, Auto" VerticalAlignment="Top">
+        <Menu Grid.Column="0">
+            <MenuItem Header="File">
                 <MenuItem Header="New">
                     <MenuItem.Icon>
                         <la:Lucide Icon="FilePlus" />
@@ -148,17 +140,36 @@
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
-    </suki:SukiWindow.MenuItems>
-    <suki:SukiWindow.RightWindowTitleBarControls>
-        
-    </suki:SukiWindow.RightWindowTitleBarControls>
-    
-    <v:DrawingView/>
+        </Menu>
 
-    <suki:SukiWindow.Styles>
+        <StackPanel Grid.Column="2"
+                    Orientation="Horizontal"
+                    Spacing="8"
+                    Margin="0, 0, 4, 0">
+            <ToggleButton Classes="Basic">
+                <la:Lucide Icon="Sun"
+                           Width="24"
+                           Height="24"
+                           StrokeBrush="{DynamicResource SukiText}" />
+            </ToggleButton>
+            <NumericUpDown sukiEx:NumericUpDownExtensions.Unit="%"
+                           ShowButtonSpinner="False"
+                           Value="100"
+                           Increment="10"
+                           Minimum="10"
+                           Maximum="800" />
+        </StackPanel>
+    </Grid>
+    <UserControl.Styles>
         <Style Selector="MenuItem la|Lucide">
-            <Setter Property="StrokeBrush" Value="{Binding $parent[suki:SukiWindow].Foreground}"/>
+            <Setter Property="StrokeBrush" Value="{Binding $parent[UserControl].Foreground}"/>
         </Style>
-    </suki:SukiWindow.Styles>
-    
-</suki:SukiWindow>
+        <Style Selector="Menu /template/ suki|GlassCard">
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+        <Style Selector="NumericUpDown /template/ suki|GlassCard.Discrete /template/ Border#PART_BorderCard">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+        </Style>
+    </UserControl.Styles>
+</UserControl>
