@@ -150,7 +150,27 @@
             </MenuItem>
     </suki:SukiWindow.MenuItems>
     <suki:SukiWindow.RightWindowTitleBarControls>
-        
+        <StackPanel Spacing="8"
+                    Orientation="Horizontal"
+                    FlowDirection="LeftToRight">
+            <ToggleButton Classes="menuToggle">
+                <la:Lucide Icon="Grid3X3"
+                           Width="16"
+                           Height="16"/>
+            </ToggleButton>
+            <Button Classes="WindowControlsButton">
+                <la:Lucide Icon="Sun"
+                           Width="16"
+                           Height="16"
+                           StrokeBrush="{Binding $parent[Button].Foreground}"/>
+            </Button>
+            <NumericUpDown sukiEx:NumericUpDownExtensions.Unit="%"
+                           ShowButtonSpinner="False"
+                           Value="100"
+                           Increment="10"
+                           Minimum="10"
+                           Maximum="800"/>
+        </StackPanel>
     </suki:SukiWindow.RightWindowTitleBarControls>
     
     <v:DrawingView/>
@@ -158,6 +178,10 @@
     <suki:SukiWindow.Styles>
         <Style Selector="MenuItem la|Lucide">
             <Setter Property="StrokeBrush" Value="{Binding $parent[suki:SukiWindow].Foreground}"/>
+        </Style>
+        <Style Selector="NumericUpDown /template/ suki|GlassCard.Discrete /template/ Border#PART_BorderCard">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
         </Style>
     </suki:SukiWindow.Styles>
     

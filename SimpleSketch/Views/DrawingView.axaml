@@ -5,6 +5,7 @@
              xmlns:v="using:SimpleSketch.Views"
              xmlns:vm="using:SimpleSketch.ViewModels"
              xmlns:c="using:SimpleSketch.Controls"
+             xmlns:la="clr-namespace:LucideAvalonia;assembly=LucideAvalonia"
              xmlns:suki="clr-namespace:SukiUI.Controls;assembly=SukiUI"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="SimpleSketch.Views.DrawingView">
@@ -24,19 +25,36 @@
             <Grid Grid.Column="1"
                   RowDefinitions="*, Auto">
                 <suki:GlassCard Grid.Row="0"
-                                Margin="20, 0, 20, 20">
-                    
+                                Margin="20, 0, 20, 20"
+                                Padding="0">
+
+                    <Image Source="/Assets/grid.jpg"
+                           Stretch="UniformToFill">
+                    </Image>
                 </suki:GlassCard>
                 <suki:GlassCard Grid.Row="1"
                                 Margin="20, 0">
-                    
+                    <StackPanel Spacing="4"
+                                Orientation="Horizontal">
+                        <Button>
+                            <la:Lucide Icon="TextCursor"/>
+                        </Button>
+                    </StackPanel>
                 </suki:GlassCard>
             </Grid>
             <suki:GlassCard Grid.Column="2">
                 <suki:PropertyGrid>
-                    
+
                 </suki:PropertyGrid>
             </suki:GlassCard>
         </Grid>
     </Panel>
+    
+    <UserControl.Styles>
+        <Style Selector="Button la|Lucide">
+            <Setter Property="StrokeBrush" Value="{Binding $parent[Button].Foreground}"/>
+            <Setter Property="Width" Value="18"/>
+            <Setter Property="Height" Value="18"/>
+        </Style>
+    </UserControl.Styles>
 </UserControl>

@@ -22,5 +22,6 @@
   <Application.Styles>
     <FluentTheme></FluentTheme>
     <sukiUi:SukiTheme ThemeColor="Red"/>
+    <StyleInclude Source="/Styles/ToggleButtonStyles.axaml"/>
   </Application.Styles>
 </Application>
