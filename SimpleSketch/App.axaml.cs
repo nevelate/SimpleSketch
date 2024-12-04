@@ -5,6 +5,7 @@ using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
 using SimpleSketch.ViewModels;
 using SimpleSketch.Views;
+using System.Linq;
 
 namespace SimpleSketch
 {
@@ -19,6 +20,10 @@ namespace SimpleSketch
         {
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
+                var culture = desktop.Args.FirstOrDefault();
+
+                Assets.Resources.Culture = new System.Globalization.CultureInfo(culture ?? "en-us");
+                //desktop.Args
                 // Line below is needed to remove Avalonia data validation.
                 // Without this line you will get duplicate validations from both Avalonia and CT
                 BindingPlugins.DataValidators.RemoveAt(0);
@@ -27,8 +32,8 @@ namespace SimpleSketch
                     DataContext = new MainWindowViewModel(),
                 };
             }
-
+            
             base.OnFrameworkInitializationCompleted();
-        }
+        }        
     }
 }

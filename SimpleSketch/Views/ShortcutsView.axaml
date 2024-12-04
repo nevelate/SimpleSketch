@@ -1,0 +1,50 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:suki="clr-namespace:SukiUI.Controls;assembly=SukiUI"
+             xmlns:la="clr-namespace:LucideAvalonia;assembly=LucideAvalonia"
+             xmlns:a="clr-namespace:SimpleSketch.Assets"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="SimpleSketch.ShortcutsView">
+  <suki:GroupBox Header="{x:Static a:Resources.Shorcuts}">
+    <Panel>
+      <StackPanel Spacing="8"
+                  HorizontalAlignment="Left">
+        <TextBlock Text="{x:Static a:Resources.New}"/>
+        <TextBlock Text="{x:Static a:Resources.Open}"/>
+        <TextBlock Text="{x:Static a:Resources.Save}"/>
+        <TextBlock Text="{x:Static a:Resources.SaveAs}"/>
+        <TextBlock Text="{x:Static a:Resources.Exit}"/>
+
+        <TextBlock Text="{x:Static a:Resources.Undo}" Margin="0, 12, 0, 0"/>
+        <TextBlock Text="{x:Static a:Resources.Redo}"/>
+        <TextBlock Text="{x:Static a:Resources.Copy}"/>
+        <TextBlock Text="{x:Static a:Resources.Cut}"/>
+        <TextBlock Text="{x:Static a:Resources.Paste}"/>
+        <TextBlock Text="{x:Static a:Resources.Delete}"/>
+      </StackPanel>
+      <StackPanel Spacing="8"
+                  HorizontalAlignment="Right">
+        <TextBlock Text="Ctrl + N"/>
+        <TextBlock Text="Ctrl + O"/>
+        <TextBlock Text="Ctrl + S"/>
+        <TextBlock Text="Ctrl + Shift + S"/>
+        <TextBlock Text="Ctrl + Q"/>
+
+        <TextBlock Text="Ctrl + Z" Margin="0, 12, 0, 0"/>
+        <TextBlock Text="Ctrl + Y"/>
+        <TextBlock Text="Ctrl + C"/>
+        <TextBlock Text="Ctrl + X"/>
+        <TextBlock Text="Ctrl + V"/>
+        <TextBlock Text="Del"/>
+        <StackPanel.Styles>
+          <Style Selector="TextBlock">
+            <Setter Property="TextAlignment" Value="Right"/>
+            <Setter Property="Foreground" Value="{DynamicResource SukiAccentColor}"/>
+          </Style>
+        </StackPanel.Styles>
+      </StackPanel>
+    </Panel>
+  </suki:GroupBox>
+</UserControl>

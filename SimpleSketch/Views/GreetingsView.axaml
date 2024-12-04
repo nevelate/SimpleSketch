@@ -1,37 +1,41 @@
-  <UserControl xmlns="https://github.com/avaloniaui"
+<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:suki="clr-namespace:SukiUI.Controls;assembly=SukiUI"
              xmlns:c="using:SimpleSketch.Controls"
+             xmlns:a="clr-namespace:SimpleSketch.Assets"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="SimpleSketch.Views.GreetingsView">
   <Grid RowDefinitions="auto, *, auto" Margin="20, 0, 20, 20">
     <TextBlock Grid.Row="0"
                VerticalAlignment="Center"
                HorizontalAlignment="Center"
-               Text="Welcome to SimpleSketch!"
+               Text="{x:Static a:Resources.Welcome30}"
                Classes="h1"
                Margin="0, 24"/>
     <suki:GlassCard Grid.Row="1">
-        <suki:GroupBox Header="Recent projects">
+      <suki:GroupBox Header="{x:Static a:Resources.RecentProjects}">
+        <ScrollViewer>
           <WrapPanel Margin="0, 10, 0, 0">
             <c:ProjectCard Margin="0, 0, 20, 20"/>
             <c:ProjectCard Margin="0, 0, 20, 20"/>
             <c:ProjectCard Margin="0, 0, 20, 20"/>
             <c:ProjectCard Margin="0, 0, 20, 20"/>
             <c:ProjectCard Margin="0, 0, 20, 20"/>
+            <c:ProjectCard Margin="0, 0, 20, 20"/>
           </WrapPanel>
-        </suki:GroupBox>
+        </ScrollViewer>
+      </suki:GroupBox>
     </suki:GlassCard>
 
     <Grid Grid.Row="2" Margin="0, 24, 0, 8">
       <StackPanel Orientation="Horizontal"
                   Spacing="16"
                   HorizontalAlignment="Right">
-        <Button Content="Open..." Classes="Flat Rounded"/>
-        <Button Content="Create new" Classes="Flat Rounded"/>
+        <Button Content="{x:Static a:Resources.Open}" Classes="Flat Rounded"/>
+        <Button Content="{x:Static a:Resources.CreateNew}" Classes="Flat Rounded"/>
       </StackPanel>
     </Grid>
   </Grid>
-</UserControl>  
+</UserControl>

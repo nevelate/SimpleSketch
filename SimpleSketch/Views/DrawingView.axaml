@@ -8,53 +8,253 @@
              xmlns:la="clr-namespace:LucideAvalonia;assembly=LucideAvalonia"
              xmlns:suki="clr-namespace:SukiUI.Controls;assembly=SukiUI"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="SimpleSketch.Views.DrawingView">
-    <Panel>
-        <Grid ColumnDefinitions="Auto, 4*, *"
-              Margin="20">
-            <suki:GlassCard Grid.Column="0">
-                <TabControl>
-                    <TabItem Header="UI elements">
-                        <!-- Content -->
-                    </TabItem>
-                    <TabItem Header="Icons">
-                        <!-- Content -->
-                    </TabItem>
-                </TabControl>
-            </suki:GlassCard>
-            <Grid Grid.Column="1"
-                  RowDefinitions="*, Auto">
-                <suki:GlassCard Grid.Row="0"
-                                Margin="20, 0, 20, 20"
-                                Padding="0">
+             x:Class="SimpleSketch.Views.DrawingView"
+             x:DataType="vm:DrawingViewModel">
+  <Panel>
+    <Grid ColumnDefinitions="2*, 5*, 2*"
+          Margin="20">
+      <suki:GlassCard Grid.Column="0">
+        <TabControl>
+          <TabItem Header="UI elements">
+            <StackPanel Spacing="10">
 
-                    <Image Source="/Assets/grid.jpg"
-                           Stretch="UniformToFill">
-                    </Image>
-                </suki:GlassCard>
-                <suki:GlassCard Grid.Row="1"
-                                Margin="20, 0">
-                    <StackPanel Spacing="4"
-                                Orientation="Horizontal">
-                        <Button>
-                            <la:Lucide Icon="TextCursor"/>
-                        </Button>
-                    </StackPanel>
-                </suki:GlassCard>
-            </Grid>
-            <suki:GlassCard Grid.Column="2">
-                <suki:PropertyGrid>
+            </StackPanel>
+          </TabItem>
+          <TabItem Header="Icons">
+            <WrapPanel>
+              <suki:GlassCard IsInteractive="True"
+                              Margin="0, 0, 8, 8"
+                              Padding="8"
+                              VerticalAlignment="Center"
+                              CornerRadius="12">
+                <la:Lucide Icon="ArrowBigDown"
+                           Width="24"
+                           Height="24"/>
+              </suki:GlassCard>
+              <suki:GlassCard IsInteractive="True"
+                              Margin="0, 0, 8, 8"
+                              Padding="8"
+                              VerticalAlignment="Center"
+                              CornerRadius="12">
+                <la:Lucide Icon="ArrowBigDownDash"
+                           Width="24"
+                           Height="24"/>
+              </suki:GlassCard>
+              <suki:GlassCard IsInteractive="True"
+                              Margin="0, 0, 8, 8"
+                              Padding="8"
+                              VerticalAlignment="Center"
+                              CornerRadius="12">
+                <la:Lucide Icon="ArrowBigLeft"
+                           Width="24"
+                           Height="24"/>
+              </suki:GlassCard>
+              <suki:GlassCard IsInteractive="True"
+                              Margin="0, 0, 8, 8"
+                              Padding="8"
+                              VerticalAlignment="Center"
+                              CornerRadius="12">
+                <la:Lucide Icon="ArrowBigLeftDash"
+                           Width="24"
+                           Height="24"/>
+              </suki:GlassCard>
+              <suki:GlassCard IsInteractive="True"
+                              Margin="0, 0, 8, 8"
+                              Padding="8"
+                              VerticalAlignment="Center"
+                              CornerRadius="12">
+                <la:Lucide Icon="ArrowBigRight"
+                           Width="24"
+                           Height="24"/>
+              </suki:GlassCard>
+              <suki:GlassCard IsInteractive="True"
+                              Margin="0, 0, 8, 8"
+                              Padding="8"
+                              VerticalAlignment="Center"
+                              CornerRadius="12">
+                <la:Lucide Icon="ArrowBigRightDash"
+                           Width="24"
+                           Height="24"/>
+              </suki:GlassCard>
+              <suki:GlassCard IsInteractive="True"
+                              Margin="0, 0, 8, 8"
+                              Padding="8"
+                              VerticalAlignment="Center"
+                              CornerRadius="12">
+                <la:Lucide Icon="ArrowBigUp"
+                           Width="24"
+                           Height="24"/>
+              </suki:GlassCard>
+              <suki:GlassCard IsInteractive="True"
+                              Margin="0, 0, 8, 8"
+                              Padding="8"
+                              VerticalAlignment="Center"
+                              CornerRadius="12">
+                <la:Lucide Icon="ArrowBigUpDash"
+                           Width="24"
+                           Height="24"/>
+              </suki:GlassCard>
+              <suki:GlassCard IsInteractive="True"
+                              Margin="0, 0, 8, 8"
+                              Padding="8"
+                              VerticalAlignment="Center"
+                              CornerRadius="12">
+                <la:Lucide Icon="ArrowDown"
+                           Width="24"
+                           Height="24"/>
+              </suki:GlassCard>
+              <suki:GlassCard IsInteractive="True"
+                              Margin="0, 0, 8, 8"
+                              Padding="8"
+                              VerticalAlignment="Center"
+                              CornerRadius="12">
+                <la:Lucide Icon="ArrowDown01"
+                           Width="24"
+                           Height="24"/>
+              </suki:GlassCard>
+              <suki:GlassCard IsInteractive="True"
+                              Margin="0, 0, 8, 8"
+                              Padding="8"
+                              VerticalAlignment="Center"
+                              CornerRadius="12">
+                <la:Lucide Icon="ArrowDown10"
+                           Width="24"
+                           Height="24"/>
+              </suki:GlassCard>
+              <suki:GlassCard IsInteractive="True"
+                              Margin="0, 0, 8, 8"
+                              Padding="8"
+                              VerticalAlignment="Center"
+                              CornerRadius="12">
+                <la:Lucide Icon="ArrowDownAZ"
+                           Width="24"
+                           Height="24"/>
+              </suki:GlassCard>
+              <suki:GlassCard IsInteractive="True"
+                              Margin="0, 0, 8, 8"
+                              Padding="8"
+                              VerticalAlignment="Center"
+                              CornerRadius="12">
+                <la:Lucide Icon="ArrowDownFromLine"
+                           Width="24"
+                           Height="24"/>
+              </suki:GlassCard>
+              <suki:GlassCard IsInteractive="True"
+                              Margin="0, 0, 8, 8"
+                              Padding="8"
+                              VerticalAlignment="Center"
+                              CornerRadius="12">
+                <la:Lucide Icon="ArrowDownLeft"
+                           Width="24"
+                           Height="24"/>
+              </suki:GlassCard>
+              <suki:GlassCard IsInteractive="True"
+                              Margin="0, 0, 8, 8"
+                              Padding="8"
+                              VerticalAlignment="Center"
+                              CornerRadius="12">
+                <la:Lucide Icon="ArrowDownNarrowWide"
+                           Width="24"
+                           Height="24"/>
+              </suki:GlassCard>
+            </WrapPanel>
+          </TabItem>
+        </TabControl>
+      </suki:GlassCard>
+      <Grid Grid.Column="1"
+            RowDefinitions="*, Auto">
+        <suki:GlassCard Grid.Row="0"
+                        Margin="20, 0, 20, 20"
+                        Padding="0">
 
-                </suki:PropertyGrid>
-            </suki:GlassCard>
-        </Grid>
-    </Panel>
-    
-    <UserControl.Styles>
-        <Style Selector="Button la|Lucide">
-            <Setter Property="StrokeBrush" Value="{Binding $parent[Button].Foreground}"/>
-            <Setter Property="Width" Value="18"/>
-            <Setter Property="Height" Value="18"/>
-        </Style>
-    </UserControl.Styles>
+          <Image Source="/Assets/grid.jpg"
+                 Stretch="UniformToFill">
+          </Image>
+        </suki:GlassCard>
+        <suki:GlassCard Grid.Row="1"
+                        Margin="20, 0"
+                        HorizontalAlignment="Center">
+          <StackPanel Spacing="12"
+                      Orientation="Horizontal">
+            <ToggleButton Classes="toolBarButton">
+              <la:Lucide Icon="MousePointer2"
+                         Width="18"
+                         Height="18"/>
+            </ToggleButton>
+            <ToggleButton Classes="toolBarButton">
+              <la:Lucide Icon="Hand"
+                         Width="18"
+                         Height="18"/>
+            </ToggleButton>
+            <ToggleButton Classes="toolBarButton">
+              <la:Lucide Icon="Eraser"
+                         Width="18"
+                         Height="18"/>
+            </ToggleButton>
+            <ToggleButton Classes="toolBarButton">
+              <la:Lucide Icon="Type"
+                         Width="18"
+                         Height="18"/>
+            </ToggleButton>
+            <ToggleButton Classes="toolBarButton">
+              <la:Lucide Icon="Slash"
+                         Width="18"
+                         Height="18"/>
+            </ToggleButton>
+            <ToggleButton Classes="toolBarButton">
+              <la:Lucide Icon="Square"
+                         Width="18"
+                         Height="18"/>
+            </ToggleButton>
+            <ToggleButton Classes="toolBarButton">
+              <la:Lucide Icon="Circle"
+                         Width="18"
+                         Height="18"/>
+            </ToggleButton>
+            <ToggleButton Classes="toolBarButton">
+              <la:Lucide Icon="Image"
+                         Width="18"
+                         Height="18"/>
+            </ToggleButton>
+            <ToggleButton Classes="toolBarButton">
+              <la:Lucide Icon="Pencil"
+                         Width="18"
+                         Height="18"/>
+            </ToggleButton>
+            <ToggleButton Classes="toolBarButton">
+              <la:Lucide Icon="Brush"
+                         Width="18"
+                         Height="18"/>
+            </ToggleButton>
+          </StackPanel>
+        </suki:GlassCard>
+      </Grid>
+      <suki:GlassCard Grid.Column="2">
+        <ScrollViewer>
+          <suki:PropertyGrid Item="{Binding Properties}">
+            <suki:PropertyGrid.DataTemplates>
+              <!--
+                            replace the PropertyGridTemplateSelector with your own type or subclass it,
+                            if you want to customize the dataTemplates being used
+                        -->
+              <suki:PropertyGridTemplateSelector UseSukiHost="False" />
+            </suki:PropertyGrid.DataTemplates>
+          </suki:PropertyGrid>
+        </ScrollViewer>
+      </suki:GlassCard>
+    </Grid>
+  </Panel>
+
+  <UserControl.Styles>
+    <Style Selector="ToggleButton la|Lucide">
+      <Setter Property="StrokeBrush" Value="{Binding $parent[ToggleButton].Foreground}"/>
+    </Style>
+    <Style Selector="suki|GlassCard la|Lucide">
+      <Setter Property="StrokeBrush" Value="{Binding $parent[suki:GlassCard].Foreground}"/>
+    </Style>
+    <Style Selector="ToggleButton.toolBarButton">
+      <Setter Property="Padding" Value="4"/>
+      <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+  </UserControl.Styles>
 </UserControl>

@@ -1,0 +1,43 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:suki="clr-namespace:SukiUI.Controls;assembly=SukiUI"
+             xmlns:la="clr-namespace:LucideAvalonia;assembly=LucideAvalonia"
+             xmlns:a="clr-namespace:SimpleSketch.Assets"
+             mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="350"
+             x:Class="SimpleSketch.ContactsView">
+  <suki:GroupBox Header="{x:Static a:Resources.ContactUs}">
+    <StackPanel Spacing="8">
+      <Grid ColumnDefinitions="auto, *, auto">
+        <TextBlock Grid.Column="0"
+                   VerticalAlignment="Center"
+                   Text="Phone number"/>
+        <Button Grid.Column="2"
+                IsHitTestVisible="False"
+                Classes="Basic Accent"
+                Content="+998 99 997 86 25"/>
+      </Grid>
+      
+      <Grid ColumnDefinitions="auto, *, auto">
+        <TextBlock Grid.Column="0"
+                   VerticalAlignment="Center"
+                   Text="Telegram"/>
+        <Button Grid.Column="2"
+                IsHitTestVisible="False"
+                Classes="Basic Accent"
+                Content="@nevelate"/>
+      </Grid>
+
+      <Grid ColumnDefinitions="auto, *, auto">
+        <TextBlock Grid.Column="0"
+                   VerticalAlignment="Center"
+                   Text="Email"/>
+        <Button Grid.Column="2"
+                IsHitTestVisible="False"
+                Classes="Basic Accent"
+                Content="akbarov.isf@gmail.com"/>
+      </Grid>
+    </StackPanel>
+  </suki:GroupBox>
+</UserControl>

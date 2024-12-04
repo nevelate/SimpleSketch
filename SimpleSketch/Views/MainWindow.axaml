@@ -8,6 +8,7 @@
                  xmlns:v="using:SimpleSketch.Views"
                  xmlns:vm="using:SimpleSketch.ViewModels"
                  xmlns:c="using:SimpleSketch.Controls"
+                 xmlns:a="clr-namespace:SimpleSketch.Assets"
                  mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
                  x:Class="SimpleSketch.Views.MainWindow"
                  x:DataType="vm:MainWindowViewModel"
@@ -16,173 +17,182 @@
                  SystemDecorations="None"
                  CanResize="True"
                  IsMenuVisible="True">
-    <suki:SukiWindow.MenuItems>
-        <MenuItem Header="File">
-                <MenuItem Header="New">
-                    <MenuItem.Icon>
-                        <la:Lucide Icon="FilePlus" />
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="Open">
-                    <MenuItem.Icon>
-                        <la:Lucide Icon="File" />
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="Recent files">
-                    <MenuItem.Icon>
-                        <la:Lucide Icon="FileClock" />
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="-" />
-                <MenuItem Header="Save">
-                    <MenuItem.Icon>
-                        <la:Lucide Icon="Save" />
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="Save as">
-                    <MenuItem.Icon>
-                        <la:Lucide Icon="SaveAll" />
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="-" />
-                <MenuItem Header="Exit">
-                    <MenuItem.Icon>
-                        <la:Lucide Icon="LogOut" />
-                    </MenuItem.Icon>
-                </MenuItem>
-            </MenuItem>
+  <suki:SukiWindow.Hosts>
+    <suki:SukiDialogHost Name="DialogHost"/>
+  </suki:SukiWindow.Hosts>
 
-            <MenuItem Header="Edit">
-                <MenuItem Header="Undo">
-                    <MenuItem.Icon>
-                        <la:Lucide Icon="Undo2" />
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="Redo">
-                    <MenuItem.Icon>
-                        <la:Lucide Icon="Redo2" />
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="-"/>
-                <MenuItem Header="Copy">
-                    <MenuItem.Icon>
-                        <la:Lucide Icon="Copy" />
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="Paste">
-                    <MenuItem.Icon>
-                        <la:Lucide Icon="ClipboardPaste" />
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="Cut">
-                    <MenuItem.Icon>
-                        <la:Lucide Icon="Scissors" />
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="-"/>
-                <MenuItem Header="Delete">
-                    <MenuItem.Icon>
-                        <la:Lucide Icon="Trash2" />
-                    </MenuItem.Icon>
-                </MenuItem>
-            </MenuItem>
-            
-            <MenuItem Header="View">
-                <MenuItem Header="Zoom in">
-                    <MenuItem.Icon>
-                        <la:Lucide Icon="ZoomIn" />
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="Zoom out">
-                    <MenuItem.Icon>
-                        <la:Lucide Icon="ZoomOut" />
-                    </MenuItem.Icon>
-                </MenuItem>
-            </MenuItem>
-            
-            <MenuItem Header="Reference">
-                <MenuItem Header="Report a problem">
-                    <MenuItem.Icon>
-                        <la:Lucide Icon="Bug" />
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="Contact us">
-                    <MenuItem.Icon>
-                        <la:Lucide Icon="Send" />
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="Undo">
-                    <MenuItem.Icon>
-                        <la:Lucide Icon="Undo2" />
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="-">
-                    
-                </MenuItem>
-                <MenuItem Header="Settings">
-                    <MenuItem.Icon>
-                        <la:Lucide Icon="Settings" />
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="Shortcuts">
-                    <MenuItem.Icon>
-                        <la:Lucide Icon="Keyboard" />
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="-">
-                    
-                </MenuItem>
-                <MenuItem Header="Github repository">
-                    <MenuItem.Icon>
-                        <la:Lucide Icon="Github" />
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="About">
-                    <MenuItem.Icon>
-                        <la:Lucide Icon="Info" />
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="Credits">
-                    <MenuItem.Icon>
-                        <la:Lucide Icon="CreditCard" />
-                    </MenuItem.Icon>
-                </MenuItem>
-            </MenuItem>
-    </suki:SukiWindow.MenuItems>
-    <suki:SukiWindow.RightWindowTitleBarControls>
-        <StackPanel Spacing="8"
-                    Orientation="Horizontal"
-                    FlowDirection="LeftToRight">
-            <ToggleButton Classes="menuToggle">
-                <la:Lucide Icon="Grid3X3"
-                           Width="16"
-                           Height="16"/>
-            </ToggleButton>
-            <Button Classes="WindowControlsButton">
-                <la:Lucide Icon="Sun"
-                           Width="16"
-                           Height="16"
-                           StrokeBrush="{Binding $parent[Button].Foreground}"/>
-            </Button>
-            <NumericUpDown sukiEx:NumericUpDownExtensions.Unit="%"
-                           ShowButtonSpinner="False"
-                           Value="100"
-                           Increment="10"
-                           Minimum="10"
-                           Maximum="800"/>
-        </StackPanel>
-    </suki:SukiWindow.RightWindowTitleBarControls>
-    
-    <v:DrawingView/>
+  <suki:SukiWindow.MenuItems>
+    <MenuItem Header="{x:Static a:Resources.File}">
+      <MenuItem Header="New">
+        <MenuItem.Icon>
+          <la:Lucide Icon="FilePlus" />
+        </MenuItem.Icon>
+      </MenuItem>
+      <MenuItem Header="{x:Static a:Resources.Open}">
+        <MenuItem.Icon>
+          <la:Lucide Icon="File" />
+        </MenuItem.Icon>
+      </MenuItem>
+      <MenuItem Header="{x:Static a:Resources.RecentProjects}">
+        <MenuItem.Icon>
+          <la:Lucide Icon="FileClock" />
+        </MenuItem.Icon>
+      </MenuItem>
+      <MenuItem Header="-" />
+      <MenuItem Header="{x:Static a:Resources.Save}">
+        <MenuItem.Icon>
+          <la:Lucide Icon="Save" />
+        </MenuItem.Icon>
+      </MenuItem>
+      <MenuItem Header="{x:Static a:Resources.SaveAs}">
+        <MenuItem.Icon>
+          <la:Lucide Icon="SaveAll" />
+        </MenuItem.Icon>
+      </MenuItem>
+      <MenuItem Header="-" />
+      <MenuItem Header="{x:Static a:Resources.Exit}"
+                Click="Exit">
+        <MenuItem.Icon>
+          <la:Lucide Icon="LogOut" />
+        </MenuItem.Icon>
+      </MenuItem>
+    </MenuItem>
 
-    <suki:SukiWindow.Styles>
-        <Style Selector="MenuItem la|Lucide">
-            <Setter Property="StrokeBrush" Value="{Binding $parent[suki:SukiWindow].Foreground}"/>
-        </Style>
-        <Style Selector="NumericUpDown /template/ suki|GlassCard.Discrete /template/ Border#PART_BorderCard">
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="BorderBrush" Value="Transparent"/>
-        </Style>
-    </suki:SukiWindow.Styles>
-    
+    <MenuItem Header="{x:Static a:Resources.Edit}">
+      <MenuItem Header="{x:Static a:Resources.Undo}">
+        <MenuItem.Icon>
+          <la:Lucide Icon="Undo2" />
+        </MenuItem.Icon>
+      </MenuItem>
+      <MenuItem Header="{x:Static a:Resources.Redo}">
+        <MenuItem.Icon>
+          <la:Lucide Icon="Redo2" />
+        </MenuItem.Icon>
+      </MenuItem>
+      <MenuItem Header="-"/>
+      <MenuItem Header="{x:Static a:Resources.Copy}">
+        <MenuItem.Icon>
+          <la:Lucide Icon="Copy" />
+        </MenuItem.Icon>
+      </MenuItem>
+      <MenuItem Header="{x:Static a:Resources.Paste}">
+        <MenuItem.Icon>
+          <la:Lucide Icon="ClipboardPaste" />
+        </MenuItem.Icon>
+      </MenuItem>
+      <MenuItem Header="{x:Static a:Resources.Cut}">
+        <MenuItem.Icon>
+          <la:Lucide Icon="Scissors" />
+        </MenuItem.Icon>
+      </MenuItem>
+      <MenuItem Header="-"/>
+      <MenuItem Header="{x:Static a:Resources.Delete}">
+        <MenuItem.Icon>
+          <la:Lucide Icon="Trash2" />
+        </MenuItem.Icon>
+      </MenuItem>
+    </MenuItem>
+
+    <MenuItem Header="{x:Static a:Resources.View}">
+      <MenuItem Header="{x:Static a:Resources.ZoomIn}">
+        <MenuItem.Icon>
+          <la:Lucide Icon="ZoomIn" />
+        </MenuItem.Icon>
+      </MenuItem>
+      <MenuItem Header="{x:Static a:Resources.ZoomOut}">
+        <MenuItem.Icon>
+          <la:Lucide Icon="ZoomOut" />
+        </MenuItem.Icon>
+      </MenuItem>
+
+    </MenuItem>
+
+    <MenuItem Header="{x:Static a:Resources.Reference}">
+      <MenuItem Header="{x:Static a:Resources.ReportAProblem}">
+        <MenuItem.Icon>
+          <la:Lucide Icon="Bug" />
+        </MenuItem.Icon>
+      </MenuItem>
+      <MenuItem Header="{x:Static a:Resources.ContactUs}"
+                Click="ShowContacts">
+        <MenuItem.Icon>
+          <la:Lucide Icon="Send" />
+        </MenuItem.Icon>
+      </MenuItem>
+      <MenuItem Header="-">
+
+      </MenuItem>
+      <MenuItem Header="{x:Static a:Resources.Language}">
+        <MenuItem.Icon>
+          <la:Lucide Icon="Languages" />
+        </MenuItem.Icon>
+
+        <MenuItem Header="English" Click="ShowRestartDialog"/>
+        <MenuItem Header="Русский" Click="ShowRestartDialog"/>
+        <MenuItem Header="O'zbekcha" Click="ShowRestartDialog"/>
+      </MenuItem>
+      <MenuItem Header="{x:Static a:Resources.Shorcuts}"
+                Click="ShowKeyboardShortcutsDialog">
+        <MenuItem.Icon>
+          <la:Lucide Icon="Keyboard" />
+        </MenuItem.Icon>
+      </MenuItem>
+      <MenuItem Header="-">
+
+      </MenuItem>
+      <MenuItem Header="Github repository">
+        <MenuItem.Icon>
+          <la:Lucide Icon="Github" />
+        </MenuItem.Icon>
+      </MenuItem>
+      <MenuItem Header="{x:Static a:Resources.About}"
+                Click="ShowAboutDialog">
+        <MenuItem.Icon>
+          <la:Lucide Icon="Info" />
+        </MenuItem.Icon>
+      </MenuItem>
+      <MenuItem Header="Credits">
+        <MenuItem.Icon>
+          <la:Lucide Icon="CreditCard" />
+        </MenuItem.Icon>
+      </MenuItem>
+    </MenuItem>
+  </suki:SukiWindow.MenuItems>
+  <suki:SukiWindow.RightWindowTitleBarControls>
+    <StackPanel Spacing="8"
+                Orientation="Horizontal"
+                FlowDirection="LeftToRight">
+      <ToggleButton Classes="menuToggle">
+        <la:Lucide Icon="Grid3X3"
+                   Width="16"
+                   Height="16"/>
+      </ToggleButton>
+      <Button Classes="WindowControlsButton">
+        <la:Lucide Icon="Sun"
+                   Width="16"
+                   Height="16"
+                   StrokeBrush="{Binding $parent[Button].Foreground}"/>
+      </Button>
+      <NumericUpDown sukiEx:NumericUpDownExtensions.Unit="%"
+                     ShowButtonSpinner="False"
+                     Classes="percent"
+                     Value="100"
+                     Increment="10"
+                     Minimum="10"
+                     Maximum="800"/>
+    </StackPanel>
+  </suki:SukiWindow.RightWindowTitleBarControls>
+
+  <suki:SukiWindow.Styles>
+    <Style Selector="MenuItem la|Lucide">
+      <Setter Property="StrokeBrush" Value="{Binding $parent[suki:SukiWindow].Foreground}"/>
+    </Style>
+    <Style Selector="NumericUpDown.percent /template/ suki|GlassCard.Discrete /template/ Border#PART_BorderCard">
+      <Setter Property="Background" Value="Transparent"/>
+      <Setter Property="BorderBrush" Value="Transparent"/>
+    </Style>
+  </suki:SukiWindow.Styles>
+
+  <v:GreetingsView/>
+
 </suki:SukiWindow>
