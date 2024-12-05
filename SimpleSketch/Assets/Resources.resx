@@ -183,6 +183,9 @@
   <data name="Exit" xml:space="preserve">
     <value>Exit</value>
   </data>
+  <data name="Theme" xml:space="preserve">
+    <value>Theme</value>
+  </data>
   <data name="SaveAs" xml:space="preserve">
     <value>Save as</value>
   </data>

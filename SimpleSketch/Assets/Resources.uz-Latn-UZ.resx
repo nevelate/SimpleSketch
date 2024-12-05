@@ -183,6 +183,9 @@
   <data name="Exit" xml:space="preserve">
     <value>Chiqish</value>
   </data>
+  <data name="Theme" xml:space="preserve">
+    <value>Mavzu</value>
+  </data>
   <data name="SaveAs" xml:space="preserve">
     <value>...kabi saqlah</value>
   </data>

@@ -239,7 +239,15 @@ namespace SimpleSketch.Assets {
                 return ResourceManager.GetString("Shorcuts", resourceCulture);
             }
         }
-        
+
+        public static string Theme
+        {
+            get
+            {
+                return ResourceManager.GetString("Theme", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Ищет локализованную строку, похожую на Undo.
         /// </summary>

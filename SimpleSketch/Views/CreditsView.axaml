@@ -1,0 +1,19 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:suki="clr-namespace:SukiUI.Controls;assembly=SukiUI"
+             xmlns:la="clr-namespace:LucideAvalonia;assembly=LucideAvalonia"
+             xmlns:a="clr-namespace:SimpleSketch.Assets"
+             xmlns:vm="using:SimpleSketch.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="SimpleSketch.Views.CreditsView">
+  <suki:GroupBox Header="Credits">
+    <StackPanel Spacing="8">
+      <TextBlock xml:space="preserve">Avalonia <HyperlinkButton Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).OpenUrlCommand}" CommandParameter="https://github.com/AvaloniaUI/Avalonia?tab=MIT-1-ov-file" Content="MIT License" /></TextBlock>
+      <TextBlock xml:space="preserve">SukiUI <HyperlinkButton Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).OpenUrlCommand}" CommandParameter="https://github.com/kikipoulet/SukiUI?tab=MIT-1-ov-file" Content="MIT License" /></TextBlock>
+      <TextBlock xml:space="preserve">LucideAvaloniaUI <HyperlinkButton Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).OpenUrlCommand}" CommandParameter="https://github.com/MarwanFr/LucideAvaloniaUI?tab=MIT-1-ov-file" Content="MIT License" /></TextBlock>
+      <TextBlock xml:space="preserve">CommunityToolkit.Mvvm <HyperlinkButton Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).OpenUrlCommand}" CommandParameter="https://github.com/CommunityToolkit/dotnet?tab=License-1-ov-file" Content="MIT License" /></TextBlock>
+    </StackPanel>
+  </suki:GroupBox>
+</UserControl>

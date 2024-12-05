@@ -33,7 +33,7 @@
       <StackPanel Orientation="Horizontal"
                   Spacing="16"
                   HorizontalAlignment="Right">
-        <Button Content="{x:Static a:Resources.Open}" Classes="Flat Rounded"/>
+        <Button Content="{x:Static a:Resources.Open}" Classes="Flat Rounded" Click="OpenFile"/>
         <Button Content="{x:Static a:Resources.CreateNew}" Classes="Flat Rounded"/>
       </StackPanel>
     </Grid>

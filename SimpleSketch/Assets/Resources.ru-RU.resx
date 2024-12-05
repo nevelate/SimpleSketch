@@ -183,6 +183,9 @@
   <data name="Exit" xml:space="preserve">
     <value>Выйти</value>
   </data>
+  <data name="Theme" xml:space="preserve">
+    <value>Тема</value>
+  </data>
   <data name="SaveAs" xml:space="preserve">
     <value>Сохранить как</value>
   </data>

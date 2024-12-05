@@ -2,7 +2,7 @@
                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                 xmlns:suki="clr-namespace:SukiUI.Controls;assembly=SukiUI"
+                 xmlns:suki="https://github.com/kikipoulet/SukiUI"
                  xmlns:sukiEx="https://github.com/kikipoulet/SukiUI"
                  xmlns:la="clr-namespace:LucideAvalonia;assembly=LucideAvalonia"
                  xmlns:v="using:SimpleSketch.Views"
@@ -104,11 +104,28 @@
           <la:Lucide Icon="ZoomOut" />
         </MenuItem.Icon>
       </MenuItem>
+      <MenuItem Header="-" />
+      <MenuItem Header="{x:Static a:Resources.Theme}" Command="{Binding ToggleBaseThemeCommand}">
+        <MenuItem.Icon>
+          <la:Lucide Icon="SunMoon" />
+        </MenuItem.Icon>
+      </MenuItem>
+      <MenuItem Click="ThemeMenuItem_OnClick"
+                Header="Accent"
+                ItemsSource="{Binding Themes}">
+        <MenuItem.DataTemplates>
+          <DataTemplate DataType="{x:Type suki:SukiColorTheme}">
+            <TextBlock Foreground="{Binding PrimaryBrush}" Text="{Binding DisplayName}" />
+          </DataTemplate>
+        </MenuItem.DataTemplates>
+      </MenuItem>
 
     </MenuItem>
 
     <MenuItem Header="{x:Static a:Resources.Reference}">
-      <MenuItem Header="{x:Static a:Resources.ReportAProblem}">
+      <MenuItem Header="{x:Static a:Resources.ReportAProblem}"
+                Command="{Binding OpenUrlCommand}"
+                CommandParameter="https://github.com/nevelate/SimpleSketch/issues">
         <MenuItem.Icon>
           <la:Lucide Icon="Bug" />
         </MenuItem.Icon>
@@ -140,7 +157,9 @@
       <MenuItem Header="-">
 
       </MenuItem>
-      <MenuItem Header="Github repository">
+      <MenuItem Header="Github repository"
+                Command="{Binding OpenUrlCommand}"
+                CommandParameter="https://github.com/nevelate/SimpleSketch">
         <MenuItem.Icon>
           <la:Lucide Icon="Github" />
         </MenuItem.Icon>
@@ -151,7 +170,8 @@
           <la:Lucide Icon="Info" />
         </MenuItem.Icon>
       </MenuItem>
-      <MenuItem Header="Credits">
+      <MenuItem Header="Credits"
+                Click="ShowCreditsDialog">
         <MenuItem.Icon>
           <la:Lucide Icon="CreditCard" />
         </MenuItem.Icon>

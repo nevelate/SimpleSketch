@@ -1,8 +1,12 @@
 using Avalonia.Controls;
+using Avalonia.Interactivity;
+using SimpleSketch.ViewModels;
 using SukiUI.Controls;
 using SukiUI.Dialogs;
+using SukiUI.Models;
 using System;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 namespace SimpleSketch.Views
 {
@@ -63,6 +67,22 @@ namespace SimpleSketch.Views
                 .TryShow();
         }
 
+        private void ShowCreditsDialog(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            DialogManager.CreateDialog()
+                .WithContent(new CreditsView())
+                .Dismiss().ByClickingBackground()
+                .TryShow();
+        }        
+
+        private void ThemeMenuItem_OnClick(object? sender, RoutedEventArgs e)
+        {
+            if (DataContext is not MainWindowViewModel vm) return;
+            if (e.Source is not MenuItem mItem) return;
+            if (mItem.DataContext is not SukiColorTheme cTheme) return;
+            vm.ChangeTheme(cTheme);
+        }
+
         private void Restart(string arguments)
         {
             Process.Start(Process.GetCurrentProcess().MainModule.FileName, arguments);
@@ -72,6 +92,6 @@ namespace SimpleSketch.Views
         private void Exit(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             Close();
-        }
+        }        
     }
 }
